@@ -37,3 +37,7 @@ message NamesList{
 message MessageList {
     repeated string messages = 1;
 }
+
+
+// to create auto generated client run this command in terminal:
+// protoc --go_out=. --go-grpc_out=. proto/greet.proto
