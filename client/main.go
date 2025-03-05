@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+
 	pb "github.com/TheMikeKaisen/go_grpc/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -20,9 +21,8 @@ func main() {
 
 	client := pb.NewGreetServiceClient(conn)
 
-	// UNARY STREAMING 
+	// UNARY STREAMING
 	// CallSayHello(client)
-
 
 	names := &pb.NamesList{
 		Names: []string{"Karthik", "Alice", "Bob"},
@@ -30,9 +30,10 @@ func main() {
 	// SERVER STREAMING
 	// CallSayHelloServerStream(client, names);
 
+	// Client STREAMING
+	// CallSayHelloClientStream(client, names)
 
-	// Client STREAMING	
-	CallSayHelloClientStream(client, names)
-
+	//Bi-Directional Streaming
+	CallHelloBidirectionalStream(client, names)
 
 }
