@@ -24,10 +24,15 @@ func main() {
 	// CallSayHello(client)
 
 
-	// SERVER STREAMING
 	names := &pb.NamesList{
 		Names: []string{"Karthik", "Alice", "Bob"},
 	}
-	CallSayHelloServerStream(client, names);
+	// SERVER STREAMING
+	// CallSayHelloServerStream(client, names);
+
+
+	// Client STREAMING	
+	CallSayHelloClientStream(client, names)
+
 
 }
